@@ -1,0 +1,196 @@
+%%% Стилевой файл Вестника. Не изменять!
+\documentclass[12pt,a4paper,twoside]{article}  %MikTeX
+\usepackage[utf8]{inputenc}%Win
+\usepackage[T1,T2A]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb,amscd,euscript}
+\usepackage[english, russian]{babel}
+
+\usepackage{graphicx}
+\usepackage{psfrag}
+\usepackage{cite}
+\usepackage{caption}
+\captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={Рис.}}
+\captionsetup[table]{labelfont={bf},labelformat={default},labelsep=period,name={Таблица}}
+
+\usepackage[textwidth=166mm,top=2cm,textheight=250mm,left=20mm,showframe=false]{geometry}
+\tolerance=500
+\voffset=0.5cm
+%\headsep=5mm
+%\textwidth=166mm
+%\textheight=250mm
+%\oddsidemargin=-4mm
+%\evensidemargin=-4mm
+%\topmargin=-7mm
+
+\usepackage{ifthen}
+\newcommand{\serieseng}{\ifthenelse{\equal{МАТЕМАТИКА}{\seriesrus}}{MATHEMATICS}{\ifthenelse{\equal{МЕХАНИКА}{\seriesrus}}{MECHANICS}{\ifthenelse{\equal{КОМПЬЮТЕРНЫЕ НАУКИ}{\seriesrus}}{COMPUTER SCIENCE}{UNDEFINED}}}}
+
+\makeatletter
+
+\global\let\@fundingrus\@empty
+\def\fundingrus#1{\gdef\@fundingrus{\@ifempty{#1}{\@empty}{\noindent{\bf Финансирование.} #1}}}
+
+\global\let\@fundingeng\@empty
+\def\fundingeng#1{\gdef\@fundingeng{\@ifempty{#1}{\@empty}{\noindent{\bf Funding.} #1}}}
+
+%информация о статье на русском языке
+\def\titlerus{\begin{otherlanguage}{russian}\thispagestyle{firstpagestylerus}\label{paperfirstpage}
+\hbox{УДК \UDC} \vspace{30pt plus 6pt}
+\begin{flushleft}
+{\bf\copyright~{\textit{\authorsrus}}\\[2ex]
+{\MakeUppercase{\articletitlerus}}}
+\end{flushleft}
+\end{otherlanguage}%
+}
+
+\def\annotationandkeywordsrus{\begin{otherlanguage}{russian}
+\noindent{\small \referatrus \par}
+\vspace{8pt}
+\noindent {\small {\it Ключевые слова}: \keywordsrus} \par%
+\vspace{8pt}
+\noindent {\small {\textrm DOI:} \paperdoi} \par%
+\vspace{10pt plus 6pt minus 1pt}
+\end{otherlanguage}}
+
+
+%информация о статье на английском языке
+\def\titleeng{\clearpage
+\thispagestyle{firstpagestyleeng}
+\begin{otherlanguage}{english}\noindent\parbox{\textwidth}{\small\noindent\textbf{\textit{\authorseng}}}\par
+\vspace{2pt plus 1pt minus 0pt}\par
+\noindent\parbox{\textwidth}{\small\noindent\textbf{\articletitleeng}}\par
+\vspace{6pt plus 1pt minus 0pt}\par
+\noindent\parbox{\textwidth}{\small\noindent{\it Keywords}: \keywordseng} \par
+\vspace{8pt}
+\noindent\small{MSC2020: }\MSC\par%
+\vspace{7pt} \par
+\noindent {\small {\textrm DOI:} \paperdoi} \par
+\end{otherlanguage}}
+
+\def\refereng{\begin{otherlanguage}{english}\vspace{20pt}  \par \small  \noindent \referateng\par\vspace{3ex}\@fundingeng\par\end{otherlanguage}}
+
+%Поступила в редакцию
+\def\receivedrus{\begin{otherlanguage}{russian}\vspace{3ex} \hfill Поступила  в редакцию~~\datereceive \par \vspace{5ex} \par\end{otherlanguage}}
+
+\def\receivedeng{\begin{otherlanguage}{english}\vspace{3ex} \hfill Received~~\datereceive \par \vspace{5ex} \par\end{otherlanguage}}
+
+%контактная информация об авторах
+\def\contactsrus{\begin{otherlanguage}{russian}\noindent\parbox{\textwidth}{\small\noindent\contactinformationrus\par\vspace{20pt}\par
+\noindent{\bf Цитирование: }\authorsrus.~\articletitlerus~// Вестник Удмуртского университета. Математика. Механика. Компьютерные науки. \paperyear. Т.~\papervolume. Вып.~\papernumber. \mbox{С.~\pageref{paperfirstpage}--\pageref{paperlastpage}.}}\end{otherlanguage}}
+
+\def\contactseng{\begin{otherlanguage}{english}\noindent\parbox{\textwidth}{\small\noindent\contactinformationeng\par\vspace{10pt}\par
+\noindent{\bf Citation: }\authorseng. \articletitleeng, {\it Vestnik Udmurtskogo Universiteta. Matematika. Mekhanika. Komp'yuternye Nauki}, \paperyear, vol.~\papervolume, issue~\papernumber, \mbox{pp.~\pageref{paperfirstpage}--\pageref{paperlastpage}.}}\label{paperlastpage}\end{otherlanguage}}
+
+
+\@addtoreset{equation}{section}
+\renewcommand{\section}{\@startsection{section}{1}{0pt}{1.3ex
+plus 1ex minus .1ex}{1.3ex plus .1ex}{\bf\,\S\,}}
+\newcommand{\point}{\hspace*{-4mm}{\bf.}\;}
+\newcommand{\sect}[1]{\begin{flushleft}%
+\protect{\section{\point#1}}\end{flushleft}}
+
+\renewcommand{\@begintheorem}[2]{\begin{trivlist}
+\item[\hspace{\labelsep}{\bf \mbox{~~~}#1\ #2.}]}
+\renewcommand{\@opargbegintheorem}[3]{\begin{trivlist}
+\item[\hspace{\labelsep}{\bf \mbox{~~~}#1\ #2 {\rm (#3).}}]}
+\renewcommand{\@endtheorem}{\end{trivlist}}
+
+\newtheorem{teo}{Теорема}
+\newtheorem{lem}{Лемма}
+\newtheorem{pre}{Предложение}
+\newtheorem{utv}{Утверждение}
+\newtheorem{sle}{Следствие}
+\newtheorem{hyp}{Гипотеза}
+\newtheorem{df}{Определение}
+\newtheorem{zam}{Замечание}
+\newtheorem{pr}{Пример}
+\newtheorem{assum}{Предположение}
+\newtheorem{cond}{Условие}
+
+\newcommand{\doc}{\mbox{Д о к а з а т е л ь с т в о}}
+
+
+\renewcommand{\@evenfoot}{}
+\renewcommand{\@oddfoot}{}
+
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{0pt}
+  \setlength{\itemsep}{0pt plus 0.3ex}
+}
+\renewcommand*{\@biblabel}[1]{#1.\hfill}
+
+
+\newcommand{\sectnn}[1]{%
+\begin{center}%
+\large\section*{#1}%
+\end{center}%
+}
+
+\renewcommand{\@evenhead}%
+{%
+\begin{otherlanguage}{russian}%
+\raisebox{0pt}%
+[\headheight]%
+[0pt]%
+{%
+\vbox{\hbox to\textwidth{\thepage\strut\hfil\authorsrus\hfil}\hrule\vspace{8pt}
+}}%
+\end{otherlanguage}%	
+}
+
+\renewcommand{\@oddhead}%
+{%
+\begin{otherlanguage}{russian}%
+\raisebox{0pt}%
+[\headheight]%
+[0pt]%
+{%
+\vbox{\hbox to\textwidth{\strut\hfil\articleshorttitlerus\hfil\thepage}\hrule\vspace{8pt}% \hbox to \textwidth{\series \hfil  \issue}
+}}\end{otherlanguage}}
+
+\makeatother
+
+\usepackage{fancyhdr}
+
+\fancypagestyle{firstpagestylerus}{
+\fancyhf{}
+\headheight=30pt
+\fancyhead[C]{\parbox{\textwidth}{{\scriptsize ВЕСТНИК\hfill УДМУРТСКОГО\hfill УНИВЕРСИТЕТА.\hfill МАТЕМАТИКА.\hfill МЕХАНИКА.\hfill КОМПЬЮТЕРНЫЕ\hfill НАУКИ}
+\vspace{2pt}
+\hrule
+\vspace{8pt}
+{\small \hbox to \textwidth{\seriesrus \hfill  \paperyear. Т.~\papervolume. Вып.~\papernumber. С.~\pageref{paperfirstpage}--\pageref{paperlastpage}.}}}}
+\renewcommand{\headrulewidth}{0.0pt}
+}
+
+\fancypagestyle{basestylerus}{
+\fancyhf{}
+\headheight=15pt
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[CE]{\articleshorttitlerus}
+\fancyhead[CO]{\authorsrus}
+\renewcommand{\headrulewidth}{0.4pt}
+}
+
+\fancypagestyle{firstpagestyleeng}{
+\fancyhf{}
+\headheight=30pt
+\fancyhead[C]{\parbox{\textwidth}{{\scriptsize VESTNIK \hfill UDMURTSKOGO \hfill UNIVERSITETA. \hfill MATEMATIKA. \hfill MEKHANIKA. \hfill KOMP'UTERNYE \hfill NAUKI}\vspace{2pt}
+\hrule
+\vspace{8pt}
+{\small \hbox to \textwidth{\serieseng \hfill  \paperyear. Vol.~\papervolume. Issue~\papernumber. Pp.~\pageref{paperfirstpage}--\pageref{paperlastpage}.}}}}
+\renewcommand{\headrulewidth}{0pt}
+}
+
+\fancypagestyle{basestyleeng}{
+\fancyhf{}
+\headheight=15pt
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[CE]{\articleshorttitleeng}
+\fancyhead[CO]{\authorseng}
+\renewcommand{\headrulewidth}{0.4pt}
+}
+
+\pagestyle{basestylerus} 
