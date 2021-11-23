@@ -251,7 +251,7 @@
 %%% Аннотация статьи на русском. Представляет собой полноценный реферат статьи.
 %%% Нельзя использовать ссылки на литературу в аннотации.
 %%% Допустимы математические формулы в ``чистом'' latex-e (без сокращений).
-\newcommand{\referatrus}{Рассматривается задача синтеза управления нелинейной системы}
+\newcommand{\referatrus}{В данной статье рассматривается задача построения локального синтеза для нелинейной управляемой системы с интегральными ограничениями на управление. Рассматривается задача о  приведении движения управляемой системы в начало координат при заданном ресурсе управления. При этом считается, что промежуток времени, в течении которого осуществляется перевод системы, достаточно мал. Указаны классы нелинейных систем, для которых задачу можно решить путем приближенной замены нелинейной системы линеаризованной.}
 %%% Аннотация статьи на английском. Представляет собой полноценный реферат статьи.
 %%% Рекомендуемый объем 100-250 слов.
 %%% Допустимы математические формулы в ``чистом'' latex-e (без сокращений).
@@ -312,6 +312,7 @@ E-mail: i.o.osipov@imm.uran.ru
 \newcommand{\pX}{{\mathcal X}}
 \let\msf=\mathsf
 \newcommand{\var}{\mathop{\sf Var}}
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
 %%% однако их количество не должно быть большим.
 %%% здесь нельзя вставлять сокращения, которые не используются.
 %%% можно пользоваться возможностями подключенных пакетов
@@ -326,14 +327,14 @@ E-mail: i.o.osipov@imm.uran.ru
 \annotationandkeywordsrus
 
 %----------------------------------
-%\begin{flushleft}
-%{\bf{Введение}}
-%\end{flushleft}
+\begin{flushleft}
+{\bf{Введение}}
+\end{flushleft}
 %%% Введение не нумеруется (поэтому команда \sect не применяется)
 
 % с красной строки
 
-В данной статье рассматривается задача построения локального синтеза для нелинейной управляемой системы с интегральными ограничениями на управление. Рассматривается задача о  приведении движения управляемой системы в начало координат при заданном ресурсе управления. При этом считается, что промежуток времени, в течении которого осуществляется перевод системы, достаточно мал. Указаны классы нелинейных систем, для которых задачу можно решить путем приближенной замены нелинейной системы линеаризованной.
+
 
 %--------------------------------------
 \sect{Основные обозначения и определения}
@@ -356,7 +357,7 @@ E-mail: i.o.osipov@imm.uran.ru
 	\lVert u(\cdot)\rVert^2_{\mathbb{L}_2} = \left(u(\cdot),u(\cdot) \right) \leqslant \mu^2
 \end{gather}
 в пространстве $\mathbb{L}_2[t_0,t_0+\bar{\varepsilon}]$ вектор-функций.
-В условиях описанных предположений, каждому $ u(\cdot) \in \mathbb{L}_2 $ соответствует единственное абсолютно непрерывное решение $ x(t)=x(t,u(\cdot)) $ системы \eqref{nonlinear}, определённое на интервале $ [t_0,t_0+\bar{\varepsilon}] $.
+В условиях описанных предположений, каждому $ u(\cdot) \in \mathbb{L}_2 $ соответствует единственное абсолютно непрерывное решение $ x(t)=x(t,x_0, u(\cdot)) $ системы \eqref{nonlinear}, определённое на интервале $ [t_0,t_0+\bar{\varepsilon}] $.
 
 Все траектории $ x(t) $ системы \eqref{nonlinear}, отвечающие удовлетворяющим \eqref{constr} управлениям,  лежат внутри некоторого компактного множества $ D \subset \mathbb{R}^n $.
 
@@ -365,9 +366,9 @@ E-mail: i.o.osipov@imm.uran.ru
 \begin{df}
 	{\it Множеством нуль управляемости} $ N(\varepsilon) $ системы \eqref{nonlinear} в пространстве состояний в момент времени $ t_0 + \varepsilon $ назовем
 	множество всех начальных состояний $ x(t_0) \in \mathbb{R}^n $ системы \eqref{nonlinear},  из которых система может быть приведена в начало координат управлениями
-	$ u(t) \in B_{\mathbb{L}_2}(0,\mu) =\\ =\left\lbrace u:\lVert u(\cdot)\rVert^2_{\mathbb{L}_2} \leqslant \mu^2\right\rbrace  $,
+	$ u(t) \in B_{\mathbb{L}_2}(0,\mu)  =\left\lbrace u:\lVert u(\cdot)\rVert^2_{\mathbb{L}_2} \leqslant \mu^2\right\rbrace  $,
 	\begin{gather*}
-		N(\varepsilon)=\{\widetilde{x}\in \mathbb{R}^n:\exists u(\cdot)\in B_{\mathbb{L}_2}(0,\mu),\; \widetilde{x}=x(t_0) , x(t_0 + \varepsilon,\widetilde{x},u(\cdot)) = 0\}.
+		N(\varepsilon)=\{\widetilde{x}\in \mathbb{R}^n:\exists u(\cdot)\in B_{\mathbb{L}_2}(0,\mu),\; x(t_0 + \varepsilon,\widetilde{x},u(\cdot)) = 0\}.
 	\end{gather*}
 \end{df}
 
@@ -375,15 +376,15 @@ E-mail: i.o.osipov@imm.uran.ru
 
 C другой стороны, если на пространстве состояний системы \eqref{nonlinear} и временном интервале $ t_0 \leqslant t \leqslant t_0 + \varepsilon $ ввести функцию $ V(t,x) $ минимального ресурса, необходимого для приведения системы из начального состояния $x$ в начало координат
 \begin{gather}\label{Bellman_fun}
-	V(t,x) = \min\limits_{u} \int_{t_0}^{t_0+\varepsilon} u^{\top}(t) u(t) \, dt.
+	V(t,x) = \min\limits_{u} \int_{t_0}^{t} u^{\top}(t) u(t) \, dt.
 \end{gather}
 то множество нуль-управляемости $ N(\varepsilon) $ может быть найдено, как множество уровня функции Беллмана
-\begin{gather*}
-	N(\varepsilon)  = \{x \in \mathbb{R}^n: V(t,x) \leqslant \mu^2\}
-\end{gather*}
+\begin{gather}\label{Null_set}
+	N(\varepsilon)  = \{x \in \mathbb{R}^n: V(t_0 + \varepsilon,x) \leqslant \mu^2\}
+\end{gather}
 Функция $V(t,x)$  удовлетворяет уравнению
 \begin{gather}\label{Bellman_eq}
-	\frac{\partial V(t,x)}{\partial t} = -\min\limits_{u} \{u^{\top}(t) u(t) + \left(\frac{\partial V(t,x)}{\partial x}\right)^{\top} \left(f(x(t))+f_2(t,x(t))u(t)\right) \}.
+	\frac{\partial V(t,x)}{\partial t} = -\min\limits_{u} \{u^{\top}(t) u(t) + \left(\frac{\partial V(t,x)}{\partial x}\right)^{\top} \left(f(x(t))+B u(t)\right) \}.
 \end{gather}
 Закон обратной связи, на котором достигается минимум в уравнении \eqref{Bellman_eq}
 \begin{gather}\label{feedback}
@@ -411,25 +412,112 @@ C другой стороны, если на пространстве состо
 \begin{gather}\label{linear}
 	\dot{x} =  A  x + B u, \qquad t_0 \leqslant t \leqslant t_0 + \varepsilon, \qquad x(t_0) = x_0,
 \end{gather}
-В этом случае функция Беллмана \eqref{Bellman_fun} может быть найдена в виде 
+
+Пусть $ X(\tau_1,\tau_0) = \Phi(\tau_1) \Phi(\tau_0) $, где $\Phi(t) $ -- матрица Коши, удовлетворяющая уравнению 
+\begin{gather*}
+	\dot{\Phi}(t) = A \Phi(t), \qquad \Phi(t_0) = I
+\end{gather*}
+Решение системы \eqref{linear} в момент времени $ t$, $t_0 \leqslant t \leqslant t_0 + \varepsilon $ имеет форму
+\begin{gather*}
+	x(t) = X(t,t_0) x(t_0) + \int_{t_0}^{t} X(t,\tau) B u(\tau)  d\tau.
+\end{gather*}
+Приравнивая $x(t) $ к нулю, выражаем $x(t_0) $
+\begin{gather*}
+	x(t_0) = -\int_{t_0}^{t} X(t_0,\tau) B u(\tau) d\tau.
+\end{gather*} 
+
+ Теперь найдем опорную функцию $ \rho(l|N(\varepsilon))$, для этого возьмем произвольный вектор  $l \in \mathbb{R}^n$, $ l \neq 0 $ и найдем максимум скалярного произведения $ (l,x(t_0)) $ на всех $x(t_0) \in N(\varepsilon)$:
+ \begin{gather}\label{sup_fun}
+ 	\begin{gathered}
+ 			\rho(l|N(\varepsilon)) = \max\limits_{x(t_0) \in N(\varepsilon)} (l,x(t_0))  = \sup\limits_{u \in B_{\mathbb{L}_2}(0,\mu)} -\int_{t_0}^{t_0+\varepsilon} l^{\top}X(t_0,\tau) B u(\tau) d\tau =\\=  \sup\limits_{u \in B_{\mathbb{L}_2}(0,\mu)} (w_l(\cdot),u(\cdot)) = \mu \| w_l(\cdot)\| = \mu \sqrt{l^{\top} W(t_0,t_0+\varepsilon) l},
+ 	\end{gathered}
+ \end{gather}
+где $ w_l(t) = -B^{\top}X^{\top}(t_0,t) l$, а симметричная матрица $ W(t_0,t_0+\varepsilon) $ определяется равенством
+\begin{gather}\label{W}
+	W(t_0,t_0+\varepsilon) = \int_{t_0}^{t_0+\varepsilon} X(t_0,\tau) B B^{\top} X^{\top} (t_0,\tau) d\tau.
+\end{gather}
+\eqref{sup_fun} -- опорная функция эллипсоиода, то есть $ N(\varepsilon) = \{x: x^{\top} W^{-1}(t_0,t_0+\varepsilon)x \leqslant \mu^2\}$. С другой стороны, множество нуль управляемости --- множество уровня функции Беллмана \eqref{Null_set}. Таким образом, в случае линейной системы функция Беллмана \eqref{Bellman_fun} имеет вид
 \begin{gather}\label{Bellman_linear_fun}
-	V(t,x) = x^{\top} Q x,
+	V(t,x) = x^{\top} Q(t) x,
 \end{gather}
-где матрица  $ Q $ может быть найдена из уравнения 
+где матрица  $ Q(t) $ может быть найдена из уравнения 
 \begin{gather}\label{eqQ}
-	\dot{Q}  = Q^{\top} B B^{\top} Q - A^{\top}Q - Q A .
+	\dot{Q}  = Q B B^{\top} Q - A^{\top}Q - Q A,
 \end{gather}
+c учетом $ W^{-1}(t_0,t) = Q(t_0) $.
 Уравнение \eqref{eqQ} получено подстановкой \eqref{Bellman_linear_fun} в \eqref{Bellman_eq} с учетом того, что оптимальная обратная связь \eqref{feedback} может быть записана в виде
 \begin{gather}\label{linear_feedback}
 	u(t,x) = -B^{\top} Q(t) x
 \end{gather}
-Управление \eqref{linear_feedback} приводит систему \eqref{linear} в начало координат и доставляет минимум функционалу $ J(u)  =\displaystyle{\int_{t_0}^{t_0+\varepsilon}} u^{\top}(t) u(t) \, dt $.
+
+Алгоритм построения обратной связи приводящей систему \eqref{linear} в начало координат выглядит следующим образом:
+\begin{description}
+	\item[Шаг 1.] Рассчитываем матрицу $ W(t_0,t_0+\varepsilon) $ по формуле \eqref{W}.
+	\item[Шаг 2.] Интегрируем уравнение \eqref{eqQ} с начальным условием $ Q(t_0)  = W^{-1}(t_0,t_0+\varepsilon)$.
+	\item[Шаг 3.] Рассчитываем управление $ u(t,x) = -B^{\top} Q(t) x(t)$
+\end{description}
+Замкнутую обратной связью \eqref{linear_feedback} систему \eqref{linear} преобразуем к виду
+\begin{gather}\label{feedback_linear_system}
+	\left\lbrace \begin{array}{l}
+			\dot{x} = (A - B B^{\top} Q(t) ) x, \qquad t_0 \leqslant t \leqslant t_0 + \varepsilon, \qquad x(t_0) = x_0\\
+			\dot{Q} = Q B B^{\top} Q - A^{\top}Q - Q A, \qquad Q(t_0) = W^{-1}(t_0,t_0+\varepsilon).
+		\end{array} \right. 
+	\end{gather}
+\begin{teo}\label{linear_teo}
+	Траектория $x(t) $ системы \eqref{feedback_linear_system} выпущенная из точки $ x $ попадает в начало координат в момент времени $ t_0 + \varepsilon$. Расход интегрального ресурса управления на переход из $ x $ в $ 0 $ равен $x^{\top} Q(t_0) x $ -- это минимально возможное значение ресурса.
+\end{teo}
+\doc. 
+	Продифференцируем $x^{\top} Q x$ вдоль траектории $ x(t) $:
+	\begin{gather*}
+		\frac{d}{dt} x^{\top} Q x = \dot{x}^{\top} Q x + x^{\top} \dot{Q} x + x^{\top} Q \dot{x} = x^{\top} (A^{\top} - Q B B^{\top} )Q x + \\ + x^{\top} Q (A - B B^{\top} Q)x + x^{\top} (Q B B^{\top} Q - A^{\top}Q - Q A) x = \\ = 
+		-x^{\top} (Q B B^{\top} Q) x.
+	\end{gather*}
+	Интегрируя последнее равенство от $ t_0 $ до $ t_0 + \varepsilon $ получаем
+	\begin{gather}\label{xqx}
+		x^{\top}(t) Q(t)x(t) = x^{\top}(t_0) Q(t_0)x(t_0) - \int_{t_0}^{t_0 + \varepsilon} x^{\top}(\tau) Q(\tau) B B^{\top} Q(\tau) x(\tau) d\tau= \\ = 
+		x^{\top}(t_0) Q(t_0)x(t_0) - \int_{t_0}^{t_0 + \varepsilon} u^{\top}(\xi)  u(\xi) d\xi,
+	\end{gather}
+где $ u(\xi) = -B^{\top} Q(\xi) x(\xi)$ -- текущее управление.
+
+Рассмотрим множество $ Y(t) = \left\lbrace x:x^{\top} Q(t) x  \leqslant c^2 \right\rbrace $, где $ c $ -- заданная константа. Опорная функция множества $ Y(t) $ равна 
+\begin{gather*}
+	\rho(l|Y(t))  = c \left( l^{\top} Q^{-1}(t) l\right)^{\rfrac{1}{2}} =  c \left( l^{\top} W(t_0,2t_0 + \varepsilon - t) l\right)^{\rfrac{1}{2}} 
+\end{gather*}
+Из определения $ W $  следует, что существует $ k > 0 $, такое что $ \left\| W(t_0,2t_0 + \varepsilon - t)\right\| \leqslant k (\varepsilon - t) $, поэтому \begin{gather*}
+	\rho(l|Y(t)) \leqslant c\sqrt{k} \sqrt{\varepsilon - t} \| l\| .
+\end{gather*}
+Из последнего неравенства следует, что для любого $ x \in Y(t) $ справедлива оценка 
+\begin{gather*}
+	 \| x\| \leqslant  c\sqrt{k} \sqrt{\varepsilon - t} 
+ \end{gather*}
+Учитывая, что $ x^{\top}(t) Q(t)x(t) \leqslant  x^{\top}(t_0) Q(t_0)x(t_0)$, мы можем заключить, что 
+\begin{gather*}
+	 \| x\| \leqslant  \left(k (\varepsilon - t) x^{\top}(t_0) Q(t_0)x(t_0)\right)^{\rfrac{1}{2}}
+\end{gather*}
+
+Таким образом, $ x(t) \rightarrow 0 $ при $ t \rightarrow t_0 + \varepsilon $. Покажем, что $ 	x^{\top}(t) Q(t)x(t) \rightarrow 0 $ при $ t \rightarrow t_0 + \varepsilon $. Этот факт не следует из стремления к 0 $ x(t) $, так как $ Q(t) = W^{-1}(t_0,2t_0+\varepsilon - t) $ не ограничена вблизи $ t_0 + \varepsilon $ в силу $ W(t_0,t_0) = 0 $. Из неравенства 
+\begin{gather}
+	\frac{d}{dt}x^{\top} Q x \leqslant 0, x^{\top} Q x > 0
+\end{gather}
+следует, что $ x^{\top}(t) Q(t)x(t) $ не возрастает и ограничена снизу. Таким образом, существует предел 
+\begin{gather}
+	\lim\limits{t \rightarrow t_0 + \varepsilon} = q \geqslant 0.
+\end{gather}
+Покажем, что $ q = 0 $. Допустим противное. Переходя в \eqref{xqx} к пределу при $ t \rightarrow t_0 + \varepsilon $ получим
+\begin{gather}
+	\int_{t_0}^{t_0+\varepsilon} u^{\top}(\xi)  u(\xi) d\xi = x^{\top} Q(t_0) x - q.
+\end{gather}
+\hfill $\square$
 %------------------------------
 \sect{Нелинейный случай}
 
 
 
-
+Вероятно, описанный подход к синтезу управления может быть распространен и на более общий случай систем вида
+\begin{gather*}
+		\dot{x}(t)=f_1(t,x(t))+f_2(t,x(t))u(t).
+\end{gather*}
+Иллюстрирующий данный факт пример приведен в следующем разделе
 %------------------------------
 \sect{Примеры}
 
@@ -482,7 +570,7 @@ plus 1ex minus 1ex}{1.3ex plus .1ex}{}}
 %%%%	
 %%%% Монография:
 %%%% Фамилия И.О. Название книги. Город: Издательство, Год. Страницы.
-
+\bibitem{Abgar} Абгарян К.А. Матричное исчисление с приложениями в теории динамических систем. М.: Физматлит, 1994. 544 с.
 
 %%%% Учебник или учебное пособие:
 %%%% Фамилия И.О. Название учебника. Номер издания (факультативно).

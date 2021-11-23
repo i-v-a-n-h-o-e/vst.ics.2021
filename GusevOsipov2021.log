@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.16)  21 NOV 2021 19:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.16)  23 NOV 2021 02:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**example2021.tex
-(./example2021.tex
+**GusevOsipov2021.tex
+(./GusevOsipov2021.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-06-01>
 (/usr/local/texlive/2021/texmf-dist/tex/latex/base/article.cls
@@ -453,31 +453,35 @@ rs
 \f@nch@O@olf=\skip59
 \f@nch@O@orf=\skip60
 )
+(/usr/local/texlive/2021/texmf-dist/tex/latex/refcheck/refcheck.sty
+Package: refcheck 2013/02/14 v1.9.1
+\btoks=\toks26
+)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count288
 \l__pdf_internal_box=\box52
 )
-(./example2021.aux)
-\openout1 = `example2021.aux'.
+(./GusevOsipov2021.aux)
+\openout1 = `GusevOsipov2021.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 306.
-LaTeX Font Info:    ... okay on input line 306.
-LaTeX Info: Redefining \th on input line 306.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 323.
+LaTeX Font Info:    ... okay on input line 323.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 323.
+LaTeX Font Info:    ... okay on input line 323.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 323.
+LaTeX Font Info:    ... okay on input line 323.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 323.
+LaTeX Font Info:    ... okay on input line 323.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 323.
+LaTeX Font Info:    ... okay on input line 323.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 323.
+LaTeX Font Info:    ... okay on input line 323.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 323.
+LaTeX Font Info:    ... okay on input line 323.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 323.
+LaTeX Font Info:    ... okay on input line 323.
+LaTeX Info: Redefining \th on input line 323.
 
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -486,12 +490,12 @@ LaTeX Info: Redefining \th on input line 306.
 \scratchbox=\box53
 \nofMPsegments=\count290
 \nofMParguments=\count291
-\everyMPshowfont=\toks26
+\everyMPshowfont=\toks27
 \MPscratchCnt=\count292
 \MPscratchDim=\dimen170
 \MPnumerator=\count293
 \makeMPintoPDFobject=\count294
-\everyMPtoPDFconversion=\toks27
+\everyMPtoPDFconversion=\toks28
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -538,94 +542,105 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 322
+Package: `refcheck' v1.9.1 <2013/02/14>
+options: showrefs, showcites, msgs, chckunlbld
+LaTeX Font Info:    Trying to load font information for U+msa on input line 325
 .
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 322
+LaTeX Font Info:    Trying to load font information for U+msb on input line 325
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+euf on input line 390
-.
+LaTeX Font Info:    Trying to load font information for T2A+cmtt on input line 
+325.
 
-(/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+(/usr/local/texlive/2021/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
+File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
 ) [1
 Non-PDF special ignored!
 <special> header=psfrag.pro
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-Package epstopdf Info: Source file: <fig1.eps>
-(epstopdf)                    date: 2008-05-29 21:06:08
-(epstopdf)                    size: 84022 bytes
-(epstopdf)             Output file: <fig1-eps-converted-to.pdf>
-(epstopdf)                    date: 2021-11-21 18:14:45
-(epstopdf)                    size: 4603 bytes
-(epstopdf)             Command: <repstopdf --outfile=fig1-eps-converted-to.pdf 
-fig1.eps>
-(epstopdf)             \includegraphics on input line 428.
-Package epstopdf Info: Output file is already uptodate.
-<fig1-eps-converted-to.pdf, id=21, 351.3125pt x 147.55125pt>
-File: fig1-eps-converted-to.pdf Graphic file (type pdf)
-<use fig1-eps-converted-to.pdf>
-Package pdftex.def Info: fig1-eps-converted-to.pdf  used on input line 428.
-(pdftex.def)             Requested size: 350.02509pt x 150.00269pt.
+[2]
 
-[2 <./fig1-eps-converted-to.pdf>] [3] [4] [5] [6
+Package refcheck Warning: Unused label `linear_teo' on input line 466.
 
-]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [7]
+Package refcheck Warning: Unlabelled equation (2.9) on input line 479.
 
-Package caption Warning: Unused \captionsetup[table] on input line 13.
+[3]
+
+Package refcheck Warning: Unlabelled equation (2.10) on input line 501.
+
+
+Package refcheck Warning: Unlabelled equation (2.11) on input line 505.
+
+
+Package refcheck Warning: Unlabelled equation (2.12) on input line 509.
+
+
+Package refcheck Warning: Unused bibitem `Abgar' on input line 573.
+
+[4] [5]
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 7
+41.
+ (/usr/local/texlive/2021/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+
+Package caption Warning: Unused \captionsetup[figure] on input line 27.
 See the caption package documentation for explanation.
 
-[8] (./example2021.aux) ) 
+
+Package caption Warning: Unused \captionsetup[table] on input line 28.
+See the caption package documentation for explanation.
+
+[6
+
+] (./GusevOsipov2021.aux) ) 
 Here is how much of TeX's memory you used:
- 6444 strings out of 478512
- 91981 string characters out of 5849619
- 428988 words of memory out of 5000000
- 24305 multiletter control sequences out of 15000+600000
- 426082 words of font info for 83 fonts, out of 8000000 for 9000
+ 6482 strings out of 478512
+ 93568 string characters out of 5849619
+ 434665 words of memory out of 5000000
+ 24349 multiletter control sequences out of 15000+600000
+ 425827 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,13n,66p,1516b,487s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm
--super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-s
-uper/cm-super-t2a.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-su
-per/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
-0.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
-pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/euler/eufm1
-0.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols/m
-sam10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbo
-ls/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/s
-fbi1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfb
-i1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx1
-095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx120
-0.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0700.
-pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pf
-b></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-</usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></
-usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></us
-r/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/
-local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on example2021.pdf (8 pages, 419735 bytes).
+ 57i,15n,66p,1001b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/
+cm-super/cm-super-t1.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm
+-super/cm-super-t2a.enc}{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/cm-
+super/cm-super-ts1.enc}</usr/local/texlive/2021/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmex10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmmi12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/c
+msy10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/symbols
+/msam10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msbm7.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-su
+per/sfbi1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-supe
+r/sfbi1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/
+sfbx1000.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sf
+bx1095.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfbx
+1200.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm08
+00.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1000
+.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1095.p
+fb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
+></usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb><
+/usr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></u
+sr/local/texlive/2021/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on GusevOsipov2021.pdf (6 pages, 401497 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 110 compressed objects within 2 object streams
+ 159 PDF objects out of 1000 (max. 8388607)
+ 98 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
