@@ -474,8 +474,10 @@ c учетом $ W^{-1}(t_0,t) = Q(t_0) $.
 	\end{gather*}
 	Интегрируя последнее равенство от $ t_0 $ до $ t_0 + \varepsilon $ получаем
 	\begin{gather}\label{xqx}
-		x^{\top}(t) Q(t)x(t) = x^{\top}(t_0) Q(t_0)x(t_0) - \int_{t_0}^{t_0 + \varepsilon} x^{\top}(\tau) Q(\tau) B B^{\top} Q(\tau) x(\tau) d\tau= \\ = 
-		x^{\top}(t_0) Q(t_0)x(t_0) - \int_{t_0}^{t_0 + \varepsilon} u^{\top}(\xi)  u(\xi) d\xi,
+		\begin{gathered}
+			x^{\top}(t) Q(t)x(t) = x^{\top}(t_0) Q(t_0)x(t_0) - \int_{t_0}^{t_0 + \varepsilon} x^{\top}(\tau) Q(\tau) B B^{\top} Q(\tau) x(\tau) d\tau= \\ = 
+			x^{\top}(t_0) Q(t_0)x(t_0) - \int_{t_0}^{t_0 + \varepsilon} u^{\top}(\xi)  u(\xi) d\xi,
+		\end{gathered}
 	\end{gather}
 где $ u(\xi) = -B^{\top} Q(\xi) x(\xi)$ -- текущее управление.
 
@@ -496,20 +498,47 @@ c учетом $ W^{-1}(t_0,t) = Q(t_0) $.
 \end{gather*}
 
 Таким образом, $ x(t) \rightarrow 0 $ при $ t \rightarrow t_0 + \varepsilon $. Покажем, что $ 	x^{\top}(t) Q(t)x(t) \rightarrow 0 $ при $ t \rightarrow t_0 + \varepsilon $. Этот факт не следует из стремления к 0 $ x(t) $, так как $ Q(t) = W^{-1}(t_0,2t_0+\varepsilon - t) $ не ограничена вблизи $ t_0 + \varepsilon $ в силу $ W(t_0,t_0) = 0 $. Из неравенства 
-\begin{gather}
+\begin{gather*}
 	\frac{d}{dt}x^{\top} Q x \leqslant 0, x^{\top} Q x > 0
-\end{gather}
+\end{gather*}
 следует, что $ x^{\top}(t) Q(t)x(t) $ не возрастает и ограничена снизу. Таким образом, существует предел 
-\begin{gather}
-	\lim\limits{t \rightarrow t_0 + \varepsilon} = q \geqslant 0.
-\end{gather}
+\begin{gather*}
+	\lim\limits_{t \rightarrow t_0 + \varepsilon} x^{\top}(t) Q(t)x(t)= q \geqslant 0.
+\end{gather*}
 Покажем, что $ q = 0 $. Допустим противное. Переходя в \eqref{xqx} к пределу при $ t \rightarrow t_0 + \varepsilon $ получим
-\begin{gather}
+\begin{gather*}
 	\int_{t_0}^{t_0+\varepsilon} u^{\top}(\xi)  u(\xi) d\xi = x^{\top} Q(t_0) x - q.
-\end{gather}
+\end{gather*}
+
+С другой стороны, расход интегрального ресурса равен значению функции Беллмана $ V(t_0,x) = x^{\top} Q(t_0) x  $, а значит $ q\equiv 0 $.
 \hfill $\square$
 %------------------------------
 \sect{Нелинейный случай}
+
+Докажем, что при некоторых условиях, линейная обратная связь \eqref{linear_feedback} приведет систему \eqref{nonlinear} в начало координат. То есть, если $ \varepsilon $ достаточно мало, $ A = \frac{\partial f}{\partial x}(0) $ и матрица $ W $ удовлетворяет некоторым условиям, то решение нелинейной системы 
+\begin{gather}\label{nonlinear_closed}
+	\dot{z} = f(z) - B B^{\top} Q z, \qquad 0 \leqslant t \leqslant \varepsilon, \qquad z(0) = z_0
+\end{gather}
+
+Наряду с системой \eqref{nonlinear_closed} будем рассматривать линеаризованную систему 
+\begin{gather}\label{linear_closed}
+	\dot{x} = A x - B B^{\top} Q z.
+\end{gather}
+
+Здесь $ Q = Q(t) $, а начальные условия для \eqref{linear_closed} совпадают с $ z_0 $.
+Далее предполагаем, что $ f(z) = Az + R(z) $, $ \|R(z) \| \leqslant k \| z\|  $ в некоторой окрестности нули $ z \in B(0,r) $, где $ B(0,r) $ -- шар в $ \mathbb{R}^n $ с центром в нуле и радиусом $ r $, $ r > 0 $. Это выполняется, если $ f(0) = 0 $, $ \frac{\partial f}{\partial x}(0) = A $ и компоненты $ f(z) $ дважды непрерывно дифференцируемы.
+
+Вычитая из \eqref{nonlinear_closed} уравнение \eqref{linear_closed}, получим 
+\begin{gather}
+	\dot{y} = A y + R(z) - B B^{\top} Q x, \qquad y(0) =0, 
+\end{gather}
+где $ y = z - x $, $ z = x + y $. 
+
+Обозначим $ V(t,y) = y^{\top} Q(t) y $. Дифференцируем вдоль решения $ y(t) $ получим, учитывая уравнение \eqref{eqQ}.
+\begin{gather}\label{dV}
+	\frac{dV}{dt} = R^{\top}(z) Q y + y^{\top} Q R(z) - y^{\top} Q B B^{\top} y. 
+\end{gather}
+
 
 
 
